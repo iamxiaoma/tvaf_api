@@ -9,12 +9,17 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-Route::get('think', function () {
-    return 'hello,ThinkPHP5!';
-});
+// blog子域名绑定到blog模块
+// Route::domain('blog', 'blog');
 
-Route::get('hello/:name', 'index/hello');
+// // 完整域名绑定到admin模块
+// Route::domain('admin.thinkphp.cn', 'admin');
 
-return [
+// // IP绑定到admin模块
+// Route::domain('114.23.4.5', 'admin');
 
-];
+Route::rule('/', 'index/Index/index');
+Route::miss('index/miss');
+
+// 全局路由参数
+// Route::option('ext','html')->option('cache', 600);

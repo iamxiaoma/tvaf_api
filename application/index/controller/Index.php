@@ -12,4 +12,8 @@ class Index
     {
         return 'hello,' . $name;
     }
+
+    public function miss(){
+        exception('请求的路由不存在', 500);
+    }
 }
