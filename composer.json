@@ -26,7 +26,8 @@
         "qiniu/php-sdk": "^7.2",
         "endroid/qr-code": "^3.2",
         "rongcloud/php-sdk": "^2.0",
-        "qcloudsms/qcloudsms_php": "^0.1.2"
+        "qcloudsms/qcloudsms_php": "^0.1.2",
+        "naixiaoxin/think-wechat": "^1.2"
     },
     "autoload": {
         "psr-4": {
