@@ -17,6 +17,11 @@ class Member extends Validate{
         'confirm_password' => 'require|confirm:new_password',
         'real_name' => 'require',
         'code' => 'require',
+        'openid' => 'require',
+        'region' => 'require',
+        'mobile' => 'require',
+        'verify_code' => 'require',
+        'sessionId' => 'require',
     ];
 
     protected $message = [
@@ -31,9 +36,16 @@ class Member extends Validate{
         'new_password.confirm' => '新密码不一致',
         'real_name.require' => '姓名必填',
         'code.require' => 'code 必填',
+        'openid.require' => 'openid 必填',
+        'region.require' => '国家区位码必填',
+        'mobile.require' => '手机号码必填',
+        'verify_code.require' => '验证码必填',
+        'sessionId' => 'sessionId必填'
     ];
 
     protected $scene = [
         'weapp_login' => ['code'],
+        'sms_send' => ['region', 'mobile'],
+        'weapp_bind' => ['openid', 'region', 'mobile', 'verify_code', 'sessionId']
     ];
 }

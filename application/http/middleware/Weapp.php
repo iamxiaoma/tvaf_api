@@ -14,12 +14,7 @@ class Weapp
         }
         // 解密token对应的内容
         $token_arr = app('jwtService')->checkJWT($token, app('JwtType')::WEAPP);
-        if($token_arr != null){
-           
-        }else{
-            exception('Token 错误', app('ErrCode')::TOKEN_ERROR);
-        }
-        //$request->user_id = $token_arr['user_id'];
+        $request->member_id = $token_arr['sub']; // 解析出member_id
         // 中间件的前置行为
         return $next($request);
     }

@@ -90,3 +90,17 @@ function millisecond() {
 	list($s1, $s2) = explode(' ', microtime());
 	return (float) sprintf('%.0f', (floatval($s1) + floatval($s2)) * 1000);
 }
+
+
+/**
+ * stdClass转换成数组
+ * @param $data
+ * @return array
+ */
+function stdc2array($data) {
+	$ret = array();
+	foreach ($data as $key => $val) {
+		$ret[$key] = $val;
+	}
+	return $ret;
+}

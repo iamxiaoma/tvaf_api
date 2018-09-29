@@ -11,6 +11,7 @@ class Index
 
 
     public function middleware(){
-        return result('tvaf weapp middleware');
+        // 获取中间件传入的参数
+        return result('tvaf weapp middleware member_id = '. request()->member_id);
     }
 }

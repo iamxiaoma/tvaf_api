@@ -7,10 +7,6 @@ use think\Model;
  */
 class JWTService extends Model {
 
-    function  __construct()
-    {
-    }
-
     /**
      * 使用指定的数据，生成jwt，进行加密处理
      *

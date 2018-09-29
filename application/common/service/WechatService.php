@@ -11,7 +11,6 @@ class WechatService extends Model{
 
     protected $payment;
     protected $miniProgram;
-    protected $memberAuthModel;
     protected $qiniuService;
 
     public function __construct(){
@@ -19,7 +18,6 @@ class WechatService extends Model{
         $this->payment = WechatFacade::payment(config('wechat.status'));// 微信支付
         $this->miniProgram = WechatFacade::miniProgram(config('wechat.status')); // 小程序
         $this->mp = WechatFacade::officialAccount(config('wechat.status')); // 微信公众号
-        $this->memberAuthModel = app('memberAuthModel');
         $this->qiniuService = app('qiniuService');
     }
 
@@ -31,24 +29,7 @@ class WechatService extends Model{
      * @return void
      */
     public function miniGetSession($code){
-        $result = $this->miniProgram->auth->session($code);
-        if(isset($result['errcode'])){
-            exception($result['errmsg'], $result['errcode']);
-        }else{
-            // 保存小程序授权信息
-            $memberAuth = $this->memberAuthModel->getByOpenIdAndPlatform($result['openid'], config('platform.code')['wechat_mini']);
-            if($memberAuth == null){
-                 // 新增授权记录
-                $data = array(
-                    'member_id' => 0,
-                    'openid' => $result['openid'],
-                    'platform' => config('platform.code')['wechat_mini']
-                );
-                $this->memberAuthModel->add($data);
-            }
-           
-            return $result;
-        }
+        return $this->miniProgram->auth->session($code);
     }
 
 
@@ -107,7 +88,7 @@ class WechatService extends Model{
         );
         $totalFee = bcmul($totalFee, 100, 0);
         $refundFee = bcmul($refundFee, 100, 0);
-        return $this->payment->refund->byTransactionId($transactionId, $refundNumber, $totalFee, $refundFee, $config);
+        //return $this->payment->refund->byTransactionId($transactionId, $refundNumber, $totalFee, $refundFee, $config);
     }
 
 }

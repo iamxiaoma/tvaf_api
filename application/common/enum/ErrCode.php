@@ -20,6 +20,12 @@ class ErrCode {
 
     const TOKEN_EXPIRES = 40004; // 授权过期
 
+    const CODE_BEEN_USED = 40005; // Code 已使用
+
+    const INVALID_CODE = 40006; // 无效 Code
+
+    const WEAPP_ERROR = 40007; // 小程序接口报错
+
     const ROUTE_ERROR = 50001; // 请求路由错误
 
     const PARAM_ERROR = 50002; // 参数错误
@@ -35,6 +41,8 @@ class ErrCode {
     const ILLEGAL_FILE_TYPE = 50007; // 不合法的文件类型
 
     const ILLEGAL_FILE_SIZE = 50008; // 不合法的文件大小
+
+    const INVALID_VERIFY_CODE = 50009; // 验证码错误
 
     
 }
