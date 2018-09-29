@@ -1,6 +1,7 @@
 <?php
 
 namespace app\http\middleware;
+use think\facade\Log;
 
 class Api
 {
@@ -22,10 +23,17 @@ class Api
                 echo 'hello, this is a options request';
                 exit;
             }
-            echo 'api 中间件前置动作，设置跨域配置等</br>';
+            //echo 'api 中间件前置动作，设置跨域配置等</br>';
             return $next($request);
         }catch(\Exception $e){
-            echo result_exception($e->getCode(), $e->getMessage());
+            // 如果是路由验证，默认返回的code为0，这里进行自定义
+            $code = $e->getCode();
+            $msg = $e->getMessage();
+            if($code=== 0){
+                $code = app('ErrCode')::PARAM_ERROR;
+            }
+            Log::record('errcode = '. $code.'，errmsg = '.$msg,'error');
+            echo result_exception($code, $msg);
         }
     }
 }

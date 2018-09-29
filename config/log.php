@@ -21,10 +21,12 @@ return [
     'level'       => [],
     // 单文件日志写入
     'single'      => false,
-    // 独立日志级别
-    'apart_level' => [],
+    // 独立日志级别 error 和 sql 日志单独记录
+    'apart_level' => ['error', 'sql'],
+    //单个日志文件的大小限制，超过后会自动记录到第二个文件
+    'file_size'     => 1024 * 1024 * 10,
     // 最大日志文件数量
-    'max_files'   => 0,
+    'max_files'   => 30,
     // 是否关闭日志写入
     'close'       => false,
 ];

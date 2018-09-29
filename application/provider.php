@@ -11,4 +11,11 @@
 
 // 应用容器绑定定义
 return [
+
+    'jwtService' => app\common\service\JWTService::class,
+    'loginService' => app\common\service\LoginService::class,
+
+    'ErrCode' => app\common\enum\ErrCode::class,
+    'JwtType' => app\common\enum\JwtType::class,
+
 ];

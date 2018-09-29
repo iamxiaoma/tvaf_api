@@ -6,3 +6,5 @@ thinkphp
 .env
 *.lock
 *.lock
+*.lock
+*.lock

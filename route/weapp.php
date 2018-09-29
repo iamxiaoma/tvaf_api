@@ -4,6 +4,8 @@ Route::group('weapp', function () {
     // 不需要授权就可以访问的路由，放在这里
     Route::get('/', 'weapp/Index/index');
 
+    Route::get('/login', 'weapp/Login/login')->validate('\app\common\validate\Member', 'weapp_login');
+
     // 需要授权之后才能访问的路由，放到这个路由分组里面
     Route::group([], function(){
 
