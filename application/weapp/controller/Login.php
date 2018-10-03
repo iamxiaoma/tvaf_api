@@ -14,6 +14,11 @@ class Login{
     }
 
 
+    /**
+     * 发送短信验证码
+     *
+     * @return void
+     */
     public function sms_send(){
         return result(app('smsService')->send(input('param.region'), input('param.mobile')));
     }
