@@ -45,6 +45,18 @@ class WechatService extends Model{
     }
 
 
+    /**
+     * 获取微信公众号网页授权 jssdk 配置参数
+     *
+     * @param [type] $callback
+     * @return void
+     */
+    public function getJSSDK($callback){
+        $this->mp->jssdk->setUrl($callback); // 手动指定请求的url
+        $config = $this->mp->jssdk->buildConfig(array('onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo'), true);
+        return json_decode($config);
+    }
+
 
     /**
      * 通过code获取Access Token
@@ -57,6 +69,7 @@ class WechatService extends Model{
         $result = $this->http_get(self::API_BASE_URL_PREFIX . self::OAUTH_TOKEN_URL . 'appid=' . $this->appid . '&secret=' . $this->appsecret . '&code=' . $code . '&grant_type=authorization_code');
         return $result;
     }
+    
 
 
     /**

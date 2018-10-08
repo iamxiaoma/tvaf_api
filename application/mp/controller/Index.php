@@ -10,6 +10,11 @@ class Index
 
 
     public function oauth(){
-        return result(app('wechatService')->getOauthRedirect('http://h5.xcourage.fullstack.cn'));
+        return result(app('wechatService')->getOauthRedirect(input('param.url')));
+    }
+
+
+    public function jssdk(){
+        return result(app('wechatService')->getJSSDK(input('param.url')));
     }
 }
