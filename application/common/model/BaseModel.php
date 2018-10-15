@@ -25,7 +25,7 @@ class BaseModel extends Model
      * @param array $fields
      * @return void
      */
-    public function list($page_number = 1, $page_size = 10, $where = array(), $fields = array(), $sort = array()){
+    public function get_list($page_number = 1, $page_size = 10, $where = array(), $fields = array(), $sort = array()){
         $list = $this->field($fields)->where(new Where($where))->order($sort)->limit(($page_number - 1) * $page_size, $page_size)->select();
         $count = $this->where($where)->count();
         return array(
