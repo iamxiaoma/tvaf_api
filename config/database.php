@@ -13,13 +13,19 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => '127.0.0.1',
+    'hostname'        => '119.23.106.90',
+    // // 数据库名
+    // 'database'        => 'tvaf',
+    // // 用户名
+    // 'username'        => 'tvaf',
+    // // 密码
+    // 'password'        => 'mq4vGPJFo0Xs5Voh',
     // 数据库名
-    'database'        => '',
+    'database'        => 'dbgirl',
     // 用户名
-    'username'        => 'root',
+    'username'        => 'dbgirl',
     // 密码
-    'password'        => '',
+    'password'        => 'drkChqD6la0E6qgB',
     // 端口
     'hostport'        => '',
     // 连接dsn
@@ -27,9 +33,9 @@ return [
     // 数据库连接参数
     'params'          => [],
     // 数据库编码默认采用utf8
-    'charset'         => 'utf8',
+    'charset'         => 'utf8mb4',
     // 数据库表前缀
-    'prefix'          => '',
+    'prefix'          => 't_',
     // 数据库调试模式
     'debug'           => true,
     // 数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
@@ -57,7 +63,7 @@ return [
     // Query类
     'query'           => '\\think\\db\\Query',
     // 是否需要断线重连
-    'break_reconnect' => false,
+    'break_reconnect' => true,
     // 断线标识字符串
     'break_match_str' => [],
 ];

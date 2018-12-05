@@ -1,7 +1,7 @@
 # tvaf_api
 tvaf体系的api接口部分
 
-基于 ThinkPHP 5.1.24 开发的 API 接口服务架构
+基于 ThinkPHP 5.1.X 开发的 API 接口服务架构
 
 请先安装 composer
 
@@ -53,3 +53,6 @@ http://127.0.0.1:8000/weapp/middleware
 1、路由
 2、中间件
 3、日志管理
+4、JWT授权机制
+5、微信公众号
+6、微信小程序

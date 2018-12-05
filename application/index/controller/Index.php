@@ -4,7 +4,7 @@ class Index
 {
     public function index()
     {
-        return 'hello tvaf api';
+        return 'hello tvaf api ·12·12·1';
     }
 
     public function miss(){

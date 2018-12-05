@@ -8,9 +8,9 @@
 
 // 凡几开发测试用的融云配置
 return [
-	'app_key' => '',
-	'app_secret' => '',
-	'common_sms_code_templateId' => '',
+	'app_key' => 'vnroth0kv46to',
+	'app_secret' => '4aBjxImRpS8HU',
+	'common_sms_code_templateId' => 'dyOE6KYW4y19J_pdyYXHEm',
 ];
 
 ?>

@@ -38,9 +38,9 @@ return [
     'official_account' => [
         'default' => [
             // AppID
-            'app_id' => env('WECHAT_OFFICIAL_ACCOUNT_APPID', 'app_id'),
+            'app_id' => env('WECHAT_OFFICIAL_ACCOUNT_APPID', 'wx50a5bdbe84de8380'),
             // AppSecret
-            'secret' => env('WECHAT_OFFICIAL_ACCOUNT_SECRET', 'secret'),
+            'secret' => env('WECHAT_OFFICIAL_ACCOUNT_SECRET', '6ddc4f728e571896a8fa2af783c7d7b7'),
             // Token
             'token' => env('WECHAT_OFFICIAL_ACCOUNT_TOKEN', 'your-token'),
             // EncodingAESKey
@@ -72,8 +72,8 @@ return [
     //小程序
     'mini_program'     => [
        'default' => [
-           'app_id'  => env('WECHAT_MINI_PROGRAM_APPID', 'app_id'),
-           'secret'  => env('WECHAT_MINI_PROGRAM_SECRET', 'secret'),
+           'app_id'  => env('WECHAT_MINI_PROGRAM_APPID', 'wx4fa08867293e3e04'),
+           'secret'  => env('WECHAT_MINI_PROGRAM_SECRET', '25a36a50773ff768df4974ecca1167b4'),
            'token'   => env('WECHAT_MINI_PROGRAM_TOKEN', ''),
            'aes_key' => env('WECHAT_MINI_PROGRAM_AES_KEY', ''),
        ],
@@ -83,9 +83,9 @@ return [
     'payment'          => [
        'default' => [
            'sandbox'    => env('WECHAT_PAYMENT_SANDBOX', false),
-           'app_id'     => env('WECHAT_PAYMENT_APPID', 'app_id'),
-           'mch_id'     => env('WECHAT_PAYMENT_MCH_ID', 'mch_id'),
-           'key'        => env('WECHAT_PAYMENT_KEY', 'key'),
+           'app_id'     => env('WECHAT_PAYMENT_APPID', 'wx4fa08867293e3e04'),
+           'mch_id'     => env('WECHAT_PAYMENT_MCH_ID', '1410124702'),
+           'key'        => env('WECHAT_PAYMENT_KEY', 'YJEMfLmVKcWuHNfzFg7046nZ6YFdOR7N'),
            'cert_path'  => env('WECHAT_PAYMENT_CERT_PATH', __DIR__.DIRECTORY_SEPARATOR.'cert'.DIRECTORY_SEPARATOR.'dev'.DIRECTORY_SEPARATOR.'apiclient_cert.pem'),    // XXX: 绝对路径！！！！
            'key_path'   => env('WECHAT_PAYMENT_KEY_PATH', __DIR__.DIRECTORY_SEPARATOR.'cert'.DIRECTORY_SEPARATOR.'dev'.DIRECTORY_SEPARATOR.'apiclient_key.pem'),      // XXX: 绝对路径！！！！
            'notify_url' => 'mini.'. env('url_domain_root'). 'notify/mini_pay',                           // 默认支付结果通知地址
